@@ -1,0 +1,20 @@
+#orion-ai-root { position: fixed; right: 12px; bottom: 16px; bottom: calc(16px + env(safe-area-inset-bottom)); z-index: 2147483647; pointer-events: none; color: #f7f8fb; font: 15px/1.4 -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif; -webkit-font-smoothing: antialiased; }
+#orion-ai-root * { box-sizing: border-box; }
+.orion-ai-fab, .orion-ai-close, .orion-ai-action { pointer-events: auto; -webkit-tap-highlight-color: transparent; touch-action: manipulation; cursor: pointer; }
+.orion-ai-fab { display: block; width: 44px; height: 28px; padding: 0; border: 0; border-radius: 99px; color: transparent; background: transparent; opacity: .32; transition: opacity 180ms ease, transform 180ms ease; }
+.orion-ai-fab::before { content: ""; display: block; width: 17px; height: 4px; margin: auto; border: 1px solid #ffffff70; border-radius: 99px; background: #ffffff55; -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); box-shadow: 0 2px 8px #0002, inset 0 1px #ffffff45; }
+.orion-ai-fab:active { opacity: .72; transform: scale(.92); }
+.orion-ai-close { position: absolute; right: 10px; top: 9px; z-index: 2; width: 29px; height: 29px; padding: 0; border: 1px solid #ffffff52; border-radius: 10px; color: #fff; background: #ff453a9c; -webkit-backdrop-filter: blur(14px) saturate(135%); backdrop-filter: blur(14px) saturate(135%); font: 22px/24px -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif; box-shadow: 0 4px 12px #0003, inset 0 1px #ffffff55; opacity: 0; pointer-events: none; transform: scale(.82); transition: opacity 160ms ease, transform 160ms ease; }
+.orion-ai-close:active { transform: scale(.9); background: #ff453acc; }
+.orion-ai-panel { display: none; width: calc(100vw - 24px); max-width: 380px; margin: 0 0 12px; padding: 16px 52px 16px 16px; border: 1px solid #ffffff1f; border-radius: 22px; pointer-events: auto; background: linear-gradient(145deg, #20283af2, #111827f2); box-shadow: 0 20px 50px #0008, inset 0 1px #ffffff17; -webkit-backdrop-filter: blur(24px) saturate(140%); backdrop-filter: blur(24px) saturate(140%); transform-origin: bottom right; animation: orion-panel-in 180ms ease-out; }
+.orion-ai-panel.is-open { display: block; }
+#orion-ai-root.is-panel-open .orion-ai-fab { opacity: 0; pointer-events: none; transform: scale(.78); }
+#orion-ai-root.is-panel-open .orion-ai-close { opacity: 1; pointer-events: auto; transform: scale(1); }
+.orion-ai-status { margin: 0 0 14px; color: #f7f8fb; font-size: 15px; font-weight: 650; letter-spacing: -.01em; }
+.orion-ai-timer { margin: -8px 0 12px; color: #aab7d3; font-size: 12px; }
+.orion-ai-action { width: 100%; min-height: 46px; padding: 0 16px; border: 1px solid #ffffff38; border-radius: 13px; color: #fff; background: linear-gradient(135deg, #ffffff2e, #ffffff12); -webkit-backdrop-filter: blur(16px) saturate(145%); backdrop-filter: blur(16px) saturate(145%); font: inherit; font-weight: 650; box-shadow: 0 5px 16px #0002, inset 0 1px #ffffff42; transition: transform 120ms ease, background 120ms ease; }
+.orion-ai-action:active { transform: scale(.98); background: linear-gradient(135deg, #ffffff46, #ffffff20); }
+.orion-ai-action:disabled { opacity: .58; }
+@keyframes orion-panel-in { from { opacity: 0; transform: translateY(6px) scale(.97); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .orion-ai-panel { animation: none; } .orion-ai-fab, .orion-ai-close, .orion-ai-action { transition: none; } }
+@media (prefers-reduced-transparency: reduce) { .orion-ai-panel { background: #172033; -webkit-backdrop-filter: none; backdrop-filter: none; } }

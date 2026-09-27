@@ -1,0 +1,27 @@
+{
+  "manifest_version": 2,
+  "name": "kryvena",
+  "version": "1.1",
+  "description": "Помощник для анализа вопросов onlinetestpad.com через выбранный AI-провайдер.",
+  "permissions": [
+    "storage",
+    "<all_urls>"
+  ],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": true
+  },
+  "browser_action": {
+    "default_title": "kryvena",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://onlinetestpad.com/*", "*://*.onlinetestpad.com/*"],
+      "js": ["content.js"],
+      "css": ["styles.css"],
+      "all_frames": false,
+      "run_at": "document_idle"
+    }
+  ]
+}
